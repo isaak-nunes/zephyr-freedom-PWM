@@ -44,6 +44,7 @@ void pisca(int red, int green, int blue, int tpis, int npis){
         k_msleep(tpis);
         Led_rgb(0,0,0);
 		}
+        k_msleep(100);
 
 }
 
@@ -111,28 +112,24 @@ int main(void) {
             case VERMELHO:
                 k_sleep(K_SECONDS(5));
                 pisca(255,0,0, 300, 3);
-                k_msleep(30);
                 current_state = VERDE;
                 break;
 
             case VERDE:
                 k_sleep(K_SECONDS(3)); 
                 pisca(0,255,0, 300, 3);
-                k_msleep(30);
                 current_state = AMARELO; 
                 break;
 
             case AMARELO:
                 k_sleep(K_SECONDS(3)); 
                 pisca(255,255,0, 300, 3);
-                k_msleep(30);
                 current_state = AZUL;
                 break;
 
             case AZUL:
                 k_sleep(K_SECONDS(7)); 
                 pisca(0,0,255, 300, 3);
-                k_msleep(30);
                 current_state = VERDE; 
                 break;
         }
